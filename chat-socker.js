@@ -1,11 +1,10 @@
 
-const socket = io("http://localhost:3000/" , { transports : ['websocket'] });
+const socket = io("https://3000-ghabianis-serversidecha-69cobnfogrg.ws-eu47.gitpod.io/" , { transports : ['websocket'] });
 
 
 
 const message =  document.getElementById('message');
 const messages =  document.getElementById('messages');
-
 const handleSubmitNewMessage = () =>{
     socket.emit('message' , {data : message.value})
 }
@@ -20,7 +19,15 @@ handleNewmessgae  = (message) =>{
 
 const buildNewMessage = (message) =>{
     const li = document.createElement('li');
-    li.appendChild(document.createTextNode(message));
-    console.log(message);
+    if(li.appendChild(document.createTextNode(message))){
+        document.getElementById('message').value='';
+    }
     return li;
+}
+
+
+function empty(){
+    if (messages.value!=''){
+        messages.innerHTML=''
+    }
 }

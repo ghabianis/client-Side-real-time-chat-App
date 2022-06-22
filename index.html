@@ -24,13 +24,15 @@
   </head>
   <body>
     <h1 style="margin-left: 35%">RealTime Chat Application</h1>
-    <div class="mssg" style="width: 600px">
+    <div class="mssg" style="width: 600px;height: 300px;" id="dd">
       message:
         <ul id='messages'></ul>
     </div>
     <div  class="divi" >
         <input  class="form-control mt-3" type="text" id="message" placeholder="say somthing..." style="display: block;width: 600px" >
-        <button class="btn btn-danger mt-3" style="display: block; "   onclick="handleSubmitNewMessage()">Send</button>
+        <button class="btn btn-danger mt-3" style="display: block; width: 600px;"   onclick="handleSubmitNewMessage()">Send</button>
+        <button class="btn btn-danger mt-3" style="display: block; width: 600px;"   onclick="empty()">Empty Conversation</button>
+
     </div>
     <script
     src="https://cdn.socket.io/4.4.1/socket.io.min.js"
